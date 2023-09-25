@@ -1,0 +1,17 @@
+const currentDate = new Date();
+if (currentDate > expiryDate) {
+  console.log('The item has expired.');
+} else {
+  console.log('The item is still valid.');
+}
+
+const currentDate = new Date();
+const timeRemaining = expirationDate - currentDate;
+
+// Convert milliseconds to days, hours, minutes, and seconds
+const daysRemaining = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+const hoursRemaining = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const minutesRemaining = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+const secondsRemaining = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+console.log(`Time remaining: ${daysRemaining} days, ${hoursRemaining} hours, ${minutesRemaining} minutes, ${secondsRemaining} seconds.`);
